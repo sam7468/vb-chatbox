@@ -46,17 +46,17 @@ const Chatcontainer = ()=>{
         setUserMessage(arr => [...arr,{message:message,createdAt:moment().toString(),sender:"user",id:(agentMessages.length + userMessages.length)+1}])
         setcount(data=>data+1)
         setInputValue("");
-        if(sendclicks>=2){
-            alert("Not Allowed! want to refresh?")
-            window.location.reload()
-        }
+        // if(sendclicks>=2){
+        //     alert("Not Allowed! want to refresh?")
+        //     window.location.reload()
+        // }
     }
 
     return(
         <>  
             <div className="container">
                 
-                <img className="chatbg" src={chatbg}></img>
+                {/* <img className="chatbg" src={chatbg}></img> */}
                 
                 <div className="agent-side">
                     {agentMessages.map((data)=>(
@@ -77,13 +77,11 @@ const Chatcontainer = ()=>{
                          </div>
                     ))}
                 </div>
-                
-                <div className="input-box">
-                    <input type="text" value={inputValue} onChange={(e)=>{setdata(e)}}></input>
+            </div>
+            <div className="input-box">
+                    <input type="text" value={inputValue} maxLength="70" onChange={(e)=>{setdata(e)}}></input>
                     <button type="submit" onClick={addtoChat}>s e n d</button>
                 </div>
-
-            </div>
         
         </>
 )

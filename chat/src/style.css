@@ -6,6 +6,8 @@ body,html{
     background-color: rgb(35, 37, 37);
 }
 .container{
+    background: url(./bg1.jpg);
+    background-size: cover;
     display: flex;
     position: absolute;
     top: 50%;
@@ -16,11 +18,14 @@ body,html{
     min-width: 70%;
     min-height: 800px;
     max-height: 800px;
-    overflow: hidden;
+    overflow: scroll;
     background-color: rgb(33,33,33);
     border-radius: 30px;
-    flex-wrap: wrap;
 }
+
+.container::-webkit-scrollbar {
+    display: none;
+  }
 
 .agent-chat-box,.user-chat-box{
     position: relative;
@@ -36,6 +41,7 @@ body,html{
     border-radius: 0px 20px 20px 20px;
     background: rgba(84, 112, 121,0.1);
     backdrop-filter: Blur(80px);
+
 }
 .message{
     margin-left: 5px;
@@ -50,12 +56,11 @@ body,html{
 }
 
 .input-box{
-    position: absolute;
-    z-index: 3;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    margin-top: 25%;  
+    margin-top: 17%;
 }
 
 .input-box input,button{
@@ -98,14 +103,13 @@ img{
     bottom: 0;
     right: 0;
     font-size: smaller;
-    opacity: .9;
 }
 
-.chatbg{
-    position: fixed;
+/* .chatbg{
+    position: absolute;
     z-index: 1;
     height: 100%;
     width: 100%;
     border-radius: 30px;
-}
+} */
 
