@@ -22,9 +22,6 @@ const Chatcontainer = ()=>{
     //trigger the useeffect once
     const [triggerOnce ,settrigger]  = useState(false)
 
-    //only two messages allowed
-    const [sendclicks,setcount]   = useState(0)
-
     //getDatafromServer()
     useEffect(()=>{
         settrigger(true)
@@ -46,10 +43,6 @@ const Chatcontainer = ()=>{
         setUserMessage(arr => [...arr,{message:message,createdAt:moment().toString(),sender:"user",id:(agentMessages.length + userMessages.length)+1}])
         setcount(data=>data+1)
         setInputValue("");
-        // if(sendclicks>=2){
-        //     alert("Not Allowed! want to refresh?")
-        //     window.location.reload()
-        // }
     }
 
     return(
