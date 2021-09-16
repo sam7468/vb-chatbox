@@ -41,7 +41,6 @@ const Chatcontainer = ()=>{
 
     const addtoChat = (e)=>{
         setUserMessage(arr => [...arr,{message:message,createdAt:moment().toString(),sender:"user",id:(agentMessages.length + userMessages.length)+1}])
-        setcount(data=>data+1)
         setInputValue("");
     }
 
